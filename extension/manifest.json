@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Deezer Track Notify",
+    "description": "Sends a notification with the track info when playing a different track on https://deezer.com",
+    "content_scripts": [{
+        "js": ["content.js"],
+        "matches": ["https://*.deezer.com/*"],
+        "run_at": "document_end"
+    }],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "icons": {
+        "128": "icons/icon-128.png",
+        "64": "icons/icon-64.png",
+        "48": "icons/icon-48.png",
+        "16": "icons/icon-16.png"
+    },
+    "offline_enabled": true,
+    "permissions": ["notifications", "https://*.deezer.com/*"],
+    "version": "1.0",
+    "minimum_chrome_version": "42"
+}
